@@ -42,12 +42,12 @@
 Настроен вывод документации (swagger, redoc)
 
 Cтек:
-Python 3.11
-Django
-DRF
-CORS
-PostgreSQL
-JWT
-Celery
-Redis
-Unittest
+- Python 3.11
+- Django
+- DRF
+- CORS
+- PostgreSQL
+- JWT
+- Celery
+- Redis
+- Unittest
