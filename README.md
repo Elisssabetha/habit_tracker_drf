@@ -39,15 +39,16 @@
 - отправка напоминаний в бот о привычках в расписании с использованием периодических задач в Celery
 
 Настроен CORS
+
 Настроен вывод документации (swagger, redoc)
 
-Cтек:
-Python 3.11
-Django
-DRF
-CORS
-PostgreSQL
-JWT
-Celery
-Redis
-Unittest
+## Cтек:
+- Python 3.11
+- Django
+- DRF
+- CORS
+- PostgreSQL
+- JWT
+- Celery
+- Redis
+- Unittest
