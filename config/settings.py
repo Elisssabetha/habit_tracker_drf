@@ -38,7 +38,7 @@ SECRET_KEY = get_env_values('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -97,9 +97,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': get_env_values('db_name'),
+        'NAME': 'postgres',
+        # 'NAME': get_env_values('db_name'),
         'USER': 'postgres',
-        'PASSWORD': get_env_values('db_password')
+        'PASSWORD': get_env_values('db_password'),
+        # 'HOST': '127.0.0.1',
+        'HOST': 'db'
     }
 }
 
@@ -162,8 +165,12 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
 }
 
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+# CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+# CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+
 CELERY_BEAT_SCHEDULE = {
     'get_chat_id': {
         'task': 'habits.tasks.get_chat_id',
