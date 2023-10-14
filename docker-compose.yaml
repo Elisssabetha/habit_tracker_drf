@@ -27,6 +27,8 @@ services:
 
   app:
     build: .
+    env_file:
+      - .env
     tty: true
     command: >
       bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
